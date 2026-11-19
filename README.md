@@ -83,8 +83,8 @@ Paper-QA/
 ### 1. Clone the repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd Paper-QA
+git clone https://github.com/aditiattu13/researchpaper-qa-assistant.git
+cd researchpaper-qa-assistant
 ```
 
 ### 2. Create and activate a virtual environment
