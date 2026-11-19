@@ -1,8 +1,11 @@
+import spaces
 import gradio as gr
+
 
 from rag import answer, build_index, parse_pdf, summarize
 
 
+@spaces.GPU
 def load_paper(file_path):
     if not file_path:
         return None, "Please upload a PDF first."
@@ -23,7 +26,7 @@ def load_paper(file_path):
     except Exception as exc:
         return None, f"Could not process this PDF: {type(exc).__name__}: {exc}"
 
-
+@spaces.GPU
 def ask_question(question, state):
     if not state:
         return "Upload and index a paper first.", ""
@@ -51,6 +54,7 @@ def ask_question(question, state):
         )
 
 
+@spaces.GPU
 def summarize_paper(state):
     if not state:
         return "Upload and index a paper first."
